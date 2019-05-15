@@ -1,5 +1,5 @@
 #include <iostream>
-#include "mytime0.h"
+#include "mytime1.h"
 
 int main()
 {
@@ -22,11 +22,19 @@ int main()
     fixing.Show();
     cout << endl;
 
-    total = coding.Sum(fixing);
-
-    cout << "Coding.Sum(fixing) time = ";
+    total = coding + fixing;
+    cout << "coding + fixing time = ";
     total.Show();
     cout << endl;
+
+	Time morefixing(3, 28);
+	cout << "more fixing time = ";
+	morefixing.Show();
+	cout << endl;
+	total = morefixing.operator + (total);
+	cout << "morefixing.oreration+(total) = ";
+	total.Show();
+	cout << endl;
 
     return 0;
 }
