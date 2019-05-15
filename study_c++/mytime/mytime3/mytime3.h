@@ -1,5 +1,5 @@
-#ifndef MYTIME2_H_
-#define MYTIME2_H_
+#ifndef MYTIME3_H_
+#define MYTIME3_H_
 
 class Time
 {
@@ -15,6 +15,8 @@ public:
 	Time operator+(const Time & t) const;
 	Time operator-(const Time & t) const;
 	Time operator*(double n) const;
-    void Show() const;
+	friend Time operator*(double n, const Time & t)
+	{ return t * n; }
+	friend std::ostream & operator<<(std::ostream & os, const Time & t);
 };
 #endif
